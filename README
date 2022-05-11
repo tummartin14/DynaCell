@@ -1,0 +1,19 @@
+DynaCell is a molecular simulation software, including a protein-ligand
+docking pipeline (DynaDock) (https://doi.org/10.1002/prot.22629 originally
+written by Iris Antes at the Max-Planck-Institut für Informatik, Campus E1 4,
+D-66123 Saarbruecken. Contributions to the broad sampling by Carla Haid).
+
+The provided files comprise an example system, the DynaCell executable
+and instructions.
+
+DynaCell includes the AGBNP2(3) library, available at https://github.com/egallicc/AGBNP3.
+It is not allowed to redistribute or modify DynaCell.
+Copyright and Development:
+Theoretical Chemical Biology and Protein Modelling Group
+Technische Universität München
+Emil-Erlenmeyer-Forum 8
+D-85354 Freising
+
+DynaCell is released in the hope that it will be useful, but
+without any warranty; without even the implied warranty of
+merchantability or fitness for a particular purpose.

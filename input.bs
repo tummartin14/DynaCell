@@ -1,0 +1,30 @@
+;--------INPUT--------
+dc_modus  broadsampling
+pdbfile  protein.pdb
+ligandpdbfile  bs/ligand.pdb       ;if ligand-pdb is a separate file
+topologyfile  protein.top
+ligandtopologyfile  ligand.top     ;if ligand-topology is a separate file
+
+;--------OUTPUT--------
+outputframefile  bs/bs.poses.pdb   ;the generated poses
+writeWholePose  no                 ;exclude protein in outputframefile
+separateOutFiles  no               ;put every pose into the same file
+outputfile  bs/bs.log.out          ;the log file
+RMSDwithHydrogens  no
+randomseed  123456
+
+;--------BROADSAMPLING--------
+ligandtype  small_molecule         ;rotatable bonds must be marked in topology file
+numPoses  2000                     ;the desired number of poses
+ProtLigOverlap  0.6                ;in "percent"
+LigLigOverlap  0.4                 ;in "percent"
+maxdistancefromprotein  0.4        ;only accept poses if max this distance away from protein surface in nm
+rotationMode  randomized           ;enable random bond rotations
+rotate_ligand  yes                 ;enable random rigid-body rotations
+translation_mode  randomized       ;enable random rigid-body translations
+translationDistance  0.4           ;place center-of-geometry of pose within sphere with this radius in nm
+maxNrTries  100000                 ;stop looking, if so many failed attempts per pose are reached
+
+;--------NON-BONDED-------
+subsetnonbonded  all
+useChargeGroups	 no
