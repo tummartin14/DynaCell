@@ -1,0 +1,21 @@
+;List of known peptide-residues and their backbone-atoms
+;This will tell dynacell which residues should be considered peptidic
+;so that constituting atoms can be separated into backbone and sidechain
+;All PDB atom-names not listed under a certain residue will be considered sidechain
+;All residues not listed here will be considered non-peptide
+;Format:
+;"list of residue names" : "list of PDB-atom-names considered to be backbone"
+;Note that the PDB-atom-name-list can be empty (all atoms considered sidechain
+;for that residue), while the residue-list cannot
+
+#define OXYGENS OC1 OC2 O OXT O1 O2 OT OT1 OT2 O' O''
+
+ACE                                                         : C O CH3 CA
+NME NAC NMA                                                 : N H CH3
+NHE NH2                                                     : N
+AIB                                                         : N H CA C O
+ALA SER THR LEU ILE VAL ASN GLN QLN ARG HID HIE HIP HIS TRP : N H HN CA HA C H1 H2 H3 HT1 HT2 HT3 OXYGENS
+TYR GLU ASP LYS ORN DAB LYN CYS CYM CYX MET ASH GLH PHE     : N H HN CA HA C H1 H2 H3 HT1 HT2 HT3 OXYGENS
+GLY                                                         : N H HN CA HA2 C H1 H2 H3 HT1 HT2 HT3 OXYGENS
+PRO                                                         : N CA HA C H1 H2 HT1 HT2 OXYGENS
+HYP                                                         : N C O CA HA
